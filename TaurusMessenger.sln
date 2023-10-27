@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaurusMessengerClient", "TaurusMessengerClient\TaurusMessengerClient.csproj", "{068F1987-CF69-4520-BEF4-A8932A54B488}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaurusMessengerServer", "TaurusMessengerServer\TaurusMessengerServer.csproj", "{12BABB8C-C150-4B8F-BE62-18C630CE136C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{068F1987-CF69-4520-BEF4-A8932A54B488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{068F1987-CF69-4520-BEF4-A8932A54B488}.Release|Any CPU.Build.0 = Release|Any CPU
 		{068F1987-CF69-4520-BEF4-A8932A54B488}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{12BABB8C-C150-4B8F-BE62-18C630CE136C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12BABB8C-C150-4B8F-BE62-18C630CE136C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12BABB8C-C150-4B8F-BE62-18C630CE136C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12BABB8C-C150-4B8F-BE62-18C630CE136C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
