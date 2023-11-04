@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using TaurusMessengerClient.ViewModel;
+using TaurusMessengerClient.View;
 
 namespace TaurusMessengerClient
 {
@@ -16,8 +18,13 @@ namespace TaurusMessengerClient
                 });
 
 #if DEBUG
-		builder.Logging.AddDebug();
+		    builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddSingleton<MainPage>();
+
+            builder.Services.AddTransient<NewPageViewModel>();
+            builder.Services.AddTransient<NewPage1>();
 
             return builder.Build();
         }
