@@ -4,20 +4,17 @@ using TaurusMessengerClient.View;
 
 namespace TaurusMessengerClient.ViewModel
 {
-    public partial class MainPageViewModel : ObservableObject
+    public partial class ContactsPageViewModel : ObservableObject
     {
-        [ObservableProperty]
-        string text;
-
         [RelayCommand]
         async Task GoToNewPage()
         {
-            await Shell.Current.GoToAsync(nameof(NewPage1));
+            
         }
 
-        public MainPageViewModel()
+        public ContactsPageViewModel()
         {
-            Text = "Some random lipsum text";
+            
         }
     }
 }

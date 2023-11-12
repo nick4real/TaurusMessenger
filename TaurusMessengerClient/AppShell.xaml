@@ -5,12 +5,44 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TaurusMessengerClient"
     xmlns:view="clr-namespace:TaurusMessengerClient.View"
-    HeightRequest="80"
-    Shell.FlyoutBehavior="Flyout">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    Title="Gelf"
+    FlyoutBehavior="Disabled">
+    <TabBar>
+        <Tab Title="Chats">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xF4AC;"
+                    Size="16" />
+            </Tab.Icon>
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate view:ChatsPage}"
+                Route="ChatsPage" />
+        </Tab>
+        <Tab Title="Contacts">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xE805;"
+                    Size="16" />
+            </Tab.Icon>
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate view:ContactsPage}"
+                Route="ContactsPage" />
+        </Tab>
+        <Tab Title="Settings">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xE800;"
+                    Size="16" />
+            </Tab.Icon>
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate view:SettingsPage}"
+                Route="SettingsPage" />
+        </Tab>
+    </TabBar>
 </Shell>

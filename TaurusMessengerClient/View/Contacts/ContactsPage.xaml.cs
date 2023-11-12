@@ -2,11 +2,12 @@ using TaurusMessengerClient.ViewModel;
 
 namespace TaurusMessengerClient.View;
 
-public partial class NewPage1 : ContentPage
+public partial class ContactsPage : ContentPage
 {
-	public NewPage1(NewPageViewModel newPageViewModel)
+	public ContactsPage(SettingsPageViewModel newPageViewModel)
 	{
 		InitializeComponent();
+
 		BindingContext = newPageViewModel;
 	}
 }

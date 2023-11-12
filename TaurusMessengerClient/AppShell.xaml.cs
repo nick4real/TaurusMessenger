@@ -8,7 +8,9 @@ namespace TaurusMessengerClient
         {
             InitializeComponent();
 
-            Routing.RegisterRoute(nameof(NewPage1), typeof(NewPage1));
+            Routing.RegisterRoute($"//{nameof(ContactsPage)}", typeof(ContactsPage));
+            Routing.RegisterRoute($"//{nameof(SettingsPage)}", typeof(SettingsPage));
+            Routing.RegisterRoute($"//{nameof(ChatsPage)}", typeof(ChatsPage));
         }
     }
 }
