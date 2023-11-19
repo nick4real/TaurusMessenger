@@ -3,19 +3,26 @@
     x:Class="TaurusMessengerClient.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:chats="clr-namespace:TaurusMessengerClient.View.Chats"
+    xmlns:contacts="clr-namespace:TaurusMessengerClient.View.Contacts"
     xmlns:local="clr-namespace:TaurusMessengerClient"
-    xmlns:view="clr-namespace:TaurusMessengerClient.View"
+    xmlns:settings="clr-namespace:TaurusMessengerClient.View.Settings"
+    xmlns:startup="clr-namespace:TaurusMessengerClient.View.Startup"
     FlyoutBehavior="Disabled">
 
-    <!--<ShellContent
-    Title="LoadingPage"
-    ContentTemplate="{DataTemplate view:LoadingPage}"
-    Route="LoadingPage" />-->
+    <ShellContent
+        Title="Loading"
+        ContentTemplate="{DataTemplate startup:LoadingPage}"
+        Route="LoadingPage"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False" />
 
     <ShellContent
         Title="Login"
-        ContentTemplate="{DataTemplate view:LoginPage}"
-        Route="LoginPage" />
+        ContentTemplate="{DataTemplate startup:LoginPage}"
+        Route="LoginPage"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False" />
 
     <TabBar>
         <Tab Title="Contacts">
@@ -27,7 +34,7 @@
             </Tab.Icon>
             <ShellContent
                 Title="Contacts"
-                ContentTemplate="{DataTemplate view:ContactsPage}"
+                ContentTemplate="{DataTemplate contacts:ContactsPage}"
                 Route="ContactsPage" />
         </Tab>
         <Tab Title="Chats">
@@ -39,7 +46,7 @@
             </Tab.Icon>
             <ShellContent
                 Title="Chats"
-                ContentTemplate="{DataTemplate view:ChatsPage}"
+                ContentTemplate="{DataTemplate chats:ChatsPage}"
                 Route="ChatsPage" />
         </Tab>
         <Tab Title="Settings">
@@ -51,7 +58,7 @@
             </Tab.Icon>
             <ShellContent
                 Title="Settings"
-                ContentTemplate="{DataTemplate view:SettingsPage}"
+                ContentTemplate="{DataTemplate settings:SettingsPage}"
                 Route="SettingsPage" />
         </Tab>
     </TabBar>
