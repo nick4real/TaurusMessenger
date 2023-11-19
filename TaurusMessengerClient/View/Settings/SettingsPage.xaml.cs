@@ -1,6 +1,6 @@
-using TaurusMessengerClient.ViewModel;
+using TaurusMessengerClient.ViewModel.Settings;
 
-namespace TaurusMessengerClient.View;
+namespace TaurusMessengerClient.View.Settings;
 
 public partial class SettingsPage : ContentPage
 {

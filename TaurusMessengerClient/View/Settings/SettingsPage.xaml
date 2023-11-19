@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="TaurusMessengerClient.View.SettingsPage"
+    x:Class="TaurusMessengerClient.View.Settings.SettingsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:vm="clr-namespace:TaurusMessengerClient.ViewModel"
-    Title="Settings"
-    x:DataType="vm:SettingsPageViewModel"
-    Shell.PresentationMode="Animated">
+    xmlns:vm="clr-namespace:TaurusMessengerClient.ViewModel.Settings"
+    x:DataType="vm:SettingsPageViewModel">
     <VerticalStackLayout>
         <Label
             HorizontalOptions="Center"

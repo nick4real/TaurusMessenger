@@ -1,10 +1,10 @@
-using TaurusMessengerClient.ViewModel;
+using TaurusMessengerClient.ViewModel.Contacts;
 
-namespace TaurusMessengerClient.View;
+namespace TaurusMessengerClient.View.Contacts;
 
 public partial class ContactsPage : ContentPage
 {
-	public ContactsPage(SettingsPageViewModel newPageViewModel)
+	public ContactsPage(ContactsPageViewModel newPageViewModel)
 	{
 		InitializeComponent();
 

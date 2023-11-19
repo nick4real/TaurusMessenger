@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Style x:Key="UserCard" TargetType="{x:Type Frame}">
+        <Setter Property="HasShadow" Value="{OnPlatform Default=true}" />
+        <Setter Property="CornerRadius" Value="{OnPlatform Default=20}" />
+    </Style>
+
+    <x:String x:Key="ArrowLeft">&#xE801;</x:String>
+    <x:String x:Key="ArrowRight">&#xE802;</x:String>
+    <x:String x:Key="SmileRightBlink">&#xE813;</x:String>
+    <x:String x:Key="SmileLeftBlink">&#xE804;</x:String>
+    <x:String x:Key="Bin">&#xF1F8;</x:String>
+    <x:String x:Key="Plus">&#x0034;</x:String>
+    <x:String x:Key="Load">&#xE830;</x:String>
+    <x:String x:Key="Gear">&#xE830;</x:String>
+    <x:String x:Key="Message">&#xE800;</x:String>
+    <x:String x:Key="Person">&#xF4AC;</x:String>
+    <x:String x:Key="Person2">&#xE805;</x:String>
+    <x:String x:Key="Euro">&#xF153;</x:String>
+    <x:String x:Key="Pound">&#xF154;</x:String>
+    <x:String x:Key="Dollar">&#xF155;</x:String>
+    <x:String x:Key="Rupee">&#xF156;</x:String>
+    <x:String x:Key="Yen">&#xF157;</x:String>
+    <x:String x:Key="Ruble">&#xF158;</x:String>
+    <x:String x:Key="Bitcoin">&#xF15A;</x:String>
+    <x:String x:Key="PaperPlane">&#xF1D8;</x:String>
+    <x:String x:Key="PaperPlane2">&#xF1D9;</x:String>
+</ResourceDictionary>

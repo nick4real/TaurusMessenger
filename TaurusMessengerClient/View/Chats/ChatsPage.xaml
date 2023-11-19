@@ -1,23 +1,66 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="TaurusMessengerClient.View.ChatsPage"
+    x:Class="TaurusMessengerClient.View.Chats.ChatsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:vm="clr-namespace:TaurusMessengerClient.ViewModel"
-    Title="Chats"
+    xmlns:m="clr-namespace:TaurusMessenger.Shared.Model;assembly=TaurusMessenger.Shared"
+    xmlns:vm="clr-namespace:TaurusMessengerClient.ViewModel.Chats"
     x:DataType="vm:ChatsPageViewModel">
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25"
-            VerticalOptions="Center">
-
-            <Image
-                HeightRequest="200"
+    <Shell.TitleView>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
                 HorizontalOptions="Center"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                Source="dotnet_bot.png" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+                Text="Chats"
+                TextColor="Azure"
+                VerticalOptions="Center" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    <RefreshView>
+        <CollectionView Background="Transparent" ItemsSource="{Binding Users}">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image HeightRequest="200" Source="dotnet_bot.svg" />
+                    <Label
+                        Padding="10"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        Text="No chats yet..." />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="m:User">
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    BackgroundColor="DarkGreen"
+                                    Command="{Binding}"
+                                    Text="Bye" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    BackgroundColor="DarkGreen"
+                                    Command="{Binding}"
+                                    Text="Hello" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="10">
+                            <Frame Style="{StaticResource UserCard}">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Image}" WidthRequest="50" />
+                                    <StackLayout VerticalOptions="Center">
+                                        <Label Text="{Binding Name}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
 </ContentPage>

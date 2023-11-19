@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TaurusMessengerClient.View.Startup.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:TaurusMessengerClient.ViewModel.Startup"
+    x:DataType="vm:LoginPageViewModel">
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25"
+        VerticalOptions="Center">
+
+        <Image
+            HeightRequest="150"
+            Source="company_logo.jpg"
+            WidthRequest="150" />
+
+        <VerticalStackLayout Spacing="5">
+            <Label
+                FontSize="28"
+                HorizontalTextAlignment="Center"
+                Text="Welcome!"
+                TextColor="Gray" />
+            <Label
+                FontSize="18"
+                HorizontalTextAlignment="Center"
+                Text="Login to your account"
+                TextColor="Gray" />
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame
+                BorderColor="White"
+                CornerRadius="28"
+                HasShadow="True"
+                HeightRequest="56"
+                WidthRequest="56"
+                ZIndex="1">
+                <Image
+                    HeightRequest="20"
+                    Source="user.png"
+                    WidthRequest="20" />
+            </Frame>
+            <Frame
+                Margin="-20,0,0,0"
+                Padding="0"
+                BorderColor="White"
+                HasShadow="True"
+                HeightRequest="45"
+                HorizontalOptions="FillAndExpand">
+                <Entry
+                    Margin="20,0,0,0"
+                    Keyboard="Email"
+                    Placeholder="User Name"
+                    Text="{Binding Login}"
+                    VerticalOptions="Center" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame
+                BorderColor="White"
+                CornerRadius="28"
+                HasShadow="True"
+                HeightRequest="56"
+                WidthRequest="56"
+                ZIndex="1">
+                <Image
+                    HeightRequest="20"
+                    Source="lock.png"
+                    WidthRequest="20" />
+            </Frame>
+            <Frame
+                Margin="-20,0,0,0"
+                Padding="0"
+                BorderColor="White"
+                HasShadow="True"
+                HeightRequest="45"
+                HorizontalOptions="FillAndExpand">
+                <Entry
+                    Margin="20,0,0,0"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    Text="{Binding Password}"
+                    VerticalOptions="Center" />
+            </Frame>
+        </StackLayout>
+
+        <Button
+            Command="{Binding SignInCommand}"
+            CornerRadius="20"
+            HorizontalOptions="Center"
+            Text="Sign In"
+            WidthRequest="100" />
+
+        <StackLayout
+            HorizontalOptions="Center"
+            Orientation="Horizontal"
+            Spacing="5">
+            <Label Text="Don't have account?" TextColor="Gray" />
+            <Label Text="Sign Up here" TextColor="#50b3f2" />
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

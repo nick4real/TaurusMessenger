@@ -5,42 +5,52 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TaurusMessengerClient"
     xmlns:view="clr-namespace:TaurusMessengerClient.View"
-    Title="Gelf"
     FlyoutBehavior="Disabled">
+
+    <!--<ShellContent
+    Title="LoadingPage"
+    ContentTemplate="{DataTemplate view:LoadingPage}"
+    Route="LoadingPage" />-->
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate view:LoginPage}"
+        Route="LoginPage" />
+
     <TabBar>
-        <Tab Title="Chats">
-            <Tab.Icon>
-                <FontImageSource
-                    FontFamily="Icons"
-                    Glyph="&#xF4AC;"
-                    Size="16" />
-            </Tab.Icon>
-            <ShellContent
-                Title="Home"
-                ContentTemplate="{DataTemplate view:ChatsPage}"
-                Route="ChatsPage" />
-        </Tab>
         <Tab Title="Contacts">
             <Tab.Icon>
                 <FontImageSource
                     FontFamily="Icons"
-                    Glyph="&#xE805;"
+                    Glyph="{StaticResource Bitcoin}"
                     Size="16" />
             </Tab.Icon>
             <ShellContent
-                Title="Home"
+                Title="Contacts"
                 ContentTemplate="{DataTemplate view:ContactsPage}"
                 Route="ContactsPage" />
+        </Tab>
+        <Tab Title="Chats">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="{StaticResource Bitcoin}"
+                    Size="16" />
+            </Tab.Icon>
+            <ShellContent
+                Title="Chats"
+                ContentTemplate="{DataTemplate view:ChatsPage}"
+                Route="ChatsPage" />
         </Tab>
         <Tab Title="Settings">
             <Tab.Icon>
                 <FontImageSource
                     FontFamily="Icons"
-                    Glyph="&#xE800;"
+                    Glyph="{StaticResource Bitcoin}"
                     Size="16" />
             </Tab.Icon>
             <ShellContent
-                Title="Home"
+                Title="Settings"
                 ContentTemplate="{DataTemplate view:SettingsPage}"
                 Route="SettingsPage" />
         </Tab>

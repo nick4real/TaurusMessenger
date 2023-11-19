@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaurusMessengerClient", "Ta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaurusMessengerServer", "TaurusMessengerServer\TaurusMessengerServer.csproj", "{12BABB8C-C150-4B8F-BE62-18C630CE136C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaurusMessenger.Shared", "TaurusMessenger.Shared\TaurusMessenger.Shared.csproj", "{AE5CFBF5-5673-48FA-AD2B-0E5CFD7FE346}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaurusMessenger.Shared", "TaurusMessenger.Shared\TaurusMessenger.Shared.csproj", "{AE5CFBF5-5673-48FA-AD2B-0E5CFD7FE346}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

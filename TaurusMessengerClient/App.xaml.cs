@@ -1,4 +1,6 @@
-﻿namespace TaurusMessengerClient
+﻿using TaurusMessenger.Shared.Model;
+
+namespace TaurusMessengerClient
 {
     public partial class App : Application
     {
