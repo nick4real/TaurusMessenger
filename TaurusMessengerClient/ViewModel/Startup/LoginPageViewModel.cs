@@ -19,7 +19,7 @@ namespace TaurusMessengerClient.ViewModel.Startup
         }
 
         [RelayCommand]
-        async void SignIn()
+        async Task SignIn()
         {
             _authService.Login();
             await Shell.Current.GoToAsync($"//{nameof(ChatsPage)}");
