@@ -21,9 +21,7 @@ namespace TaurusMessengerClient.ViewModel.Chats
         {
             Users = new ObservableCollection<User>()
             {
-                new User(),
-                new User(),
-                new User()
+
             };
         }
     }

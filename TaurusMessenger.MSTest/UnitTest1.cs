@@ -1,11 +1,18 @@
+using TaurusMessengerServer;
+using TaurusMessengerServer.Service;
+
 namespace TaurusMessenger.MSTest
 {
     [TestClass]
-    public class UnitTest1
+    public class Sqlite
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GetUser1()
         {
+            //DatabaseService db = new DatabaseService();
+            //var user = db.GetUser();
+
+            //Assert.AreEqual(user.Login, "niko");
         }
     }
 }

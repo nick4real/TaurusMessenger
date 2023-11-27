@@ -5,5 +5,6 @@ namespace TaurusMessengerServer
     public class ChatHub : Hub
     {
 
+        
     }
 }

@@ -6,10 +6,18 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaurusMessengerClient", "TaurusMessengerClient\TaurusMessengerClient.csproj", "{068F1987-CF69-4520-BEF4-A8932A54B488}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaurusMessengerServer", "TaurusMessengerServer\TaurusMessengerServer.csproj", "{12BABB8C-C150-4B8F-BE62-18C630CE136C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AE5CFBF5-5673-48FA-AD2B-0E5CFD7FE346} = {AE5CFBF5-5673-48FA-AD2B-0E5CFD7FE346}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaurusMessenger.Shared", "TaurusMessenger.Shared\TaurusMessenger.Shared.csproj", "{AE5CFBF5-5673-48FA-AD2B-0E5CFD7FE346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaurusMessenger.MSTest", "TaurusMessenger.MSTest\TaurusMessenger.MSTest.csproj", "{B26BE8ED-76B9-48AA-9CF3-0A4621DB4B56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaurusMessenger.MSTest", "TaurusMessenger.MSTest\TaurusMessenger.MSTest.csproj", "{B26BE8ED-76B9-48AA-9CF3-0A4621DB4B56}"
+	ProjectSection(ProjectDependencies) = postProject
+		{068F1987-CF69-4520-BEF4-A8932A54B488} = {068F1987-CF69-4520-BEF4-A8932A54B488}
+		{12BABB8C-C150-4B8F-BE62-18C630CE136C} = {12BABB8C-C150-4B8F-BE62-18C630CE136C}
+		{AE5CFBF5-5673-48FA-AD2B-0E5CFD7FE346} = {AE5CFBF5-5673-48FA-AD2B-0E5CFD7FE346}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
