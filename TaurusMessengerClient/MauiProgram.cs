@@ -30,6 +30,7 @@ namespace TaurusMessengerClient
 #endif
             //Service
             builder.Services.AddSingleton<AuthService>();
+            builder.Services.AddSingleton<HttpClient>();
             //Startup
             builder.Services.AddTransient<LoadingPage>();
             builder.Services.AddTransient<LoadingPageViewModel>();

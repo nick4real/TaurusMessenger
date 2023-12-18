@@ -6,6 +6,8 @@ namespace TaurusMessengerServer.Service
     public class MySqlContext : DbContext
     {
         public DbSet<User> Users { get; set; } = null!;
+        //TODO: add another tables from MySQL
+
         public MySqlContext()
         {
             Database.EnsureCreated();

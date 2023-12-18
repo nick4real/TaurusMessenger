@@ -93,6 +93,18 @@
             Text="Sign In"
             WidthRequest="100" />
 
+        <Button
+            Command="{Binding SignalCommand}"
+            CornerRadius="20"
+            HorizontalOptions="Center"
+            Text="SignalR Check"
+            WidthRequest="100" />
+
+        <Label
+            FontSize="28"
+            Text="{Binding Message}"
+            TextColor="Red" />
+
         <StackLayout
             HorizontalOptions="Center"
             Orientation="Horizontal"

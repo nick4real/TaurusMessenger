@@ -2,21 +2,24 @@
 
 namespace TaurusMessengerServer.Service
 {
-    public class DatabaseService
+    public class DatabaseService 
     {
-        public DatabaseService()
+        private readonly MySqlContext database;
+        public DatabaseService(MySqlContext msc)
         {
-            var temp = GetUser();
-            Console.WriteLine(temp.Login);
+            database = msc;
         }
 
-        public User GetUser()
+        public User GetUser(string login = "")
         {
-            using (MySqlContext db = new MySqlContext())
-            {
-                var users = db.Users.ToList();
-                return users[0];
-            }
+            return database.Users.ToList().FirstOrDefault((user) => user.Login == login)!;
         }
+
+        public List<User> GetUsers()
+        {
+            return database.Users.ToList();
+        }
+
+        //TODO: more methods to work with schemas
     }
 }

@@ -53,7 +53,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="{Binding Image}" WidthRequest="50" />
                                     <StackLayout VerticalOptions="Center">
-                                        <Label Text="{Binding Name}" />
+                                        <Label Text="{Binding NickName}" />
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>
