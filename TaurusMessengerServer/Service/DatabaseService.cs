@@ -12,7 +12,17 @@ namespace TaurusMessengerServer.Service
 
         public User GetUser(string login = "")
         {
-            return database.Users.ToList().FirstOrDefault((user) => user.Login == login)!;
+            return database
+                .Users
+                .ToList()
+                .FirstOrDefault((user) => user.Login == login)!;
+        }
+        public bool ValidateUser(UserAuthData data)
+        {
+            return database
+                .Users
+                .ToList()
+                .FirstOrDefault((user) => user.Login == data.Login && user.Password == data.Password)! != null;
         }
 
         public List<User> GetUsers()

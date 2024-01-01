@@ -40,13 +40,20 @@ namespace TaurusMessengerClient.ViewModel.Startup
         {
             try
             {
-                var _myAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
+                var _myAccessToken = login;
+
+                if (String.IsNullOrWhiteSpace(login))
+                {
+                    _myAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" +
                     ".eyJpc3MiOiJodHRwczovL2dpdGh1Yi5jb20vbmljazRyZWFsIiwiYXVkIjpbImh0dHBzOi8vdGF1cnVzLmNvbSIsImh0dHBzOi8vdGF1cnVzLmNvbSJdLCJleHAiOjE3MDI5NDMxMjJ9" +
                     ".ObzOtlgyg5DCVZXpGcHkJGbgkIiKmcHqgMf8MLb7QzQ";
+                }
+
                 var connection = new HubConnectionBuilder()
-                .WithUrl("https://localhost:7094/hubs/chat", options =>
+                .WithUrl("https://localhost:7094/hub", options =>
                 {
                     options.AccessTokenProvider = () => Task.FromResult(_myAccessToken);
+                    options.UseDefaultCredentials = true;
                 })
                 .Build();
 
@@ -58,7 +65,6 @@ namespace TaurusMessengerClient.ViewModel.Startup
             {
                 
             }
-            
         }
     }
 }

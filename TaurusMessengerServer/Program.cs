@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TaurusMessengerServer.Hubs;
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 
 builder.Services.AddSignalR();
+builder.Services.AddSingleton<IUserIdProvider, NameUserIdProvider>();
 builder.Services.AddControllers();
 
 builder.Services.AddSingleton<MySqlContext>();
@@ -33,7 +35,7 @@ builder.Services
 
             var path = context.HttpContext.Request.Path;
             if (!string.IsNullOrEmpty(accessToken) &&
-                (path.StartsWithSegments("/hubs/chat")))
+                (path.StartsWithSegments("/hub")))
             {
                 Console.WriteLine("Connection");
                 context.Token = accessToken;
@@ -62,9 +64,7 @@ var app = builder.Build();
 app.UseRouting();
 
 app.MapControllers();
-app.MapHub<ChatHub>("/hubs/chat");
-app.MapHub<NotificationHub>("/hubs/notification");
-app.MapHub<PresenceHub>("/hubs/presence");
+app.MapHub<ServerHub>("/hub");
 
 app.UseAuthentication();
 app.UseAuthorization();

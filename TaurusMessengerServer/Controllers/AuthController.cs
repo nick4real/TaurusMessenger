@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 using TaurusMessenger.Shared.Model;
 using TaurusMessengerServer.Service;
@@ -37,13 +35,11 @@ namespace TaurusMessengerServer.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<string>> Login(UserAuthData inputData)
         {
-            var result = database.GetUser(inputData.Login);
-            if (result == null)
+            if (database.ValidateUser(inputData))
             {
-                return BadRequest(result);
+                return BadRequest();
             }
-
-            return Ok(GenerateToken(inputData));  //TODO: implement JWT auth
+            return Ok(GenerateToken(inputData));
         }
 
         private string GenerateToken(UserAuthData user)
@@ -59,13 +55,11 @@ namespace TaurusMessengerServer.Controllers
             {
                 new Claim(JwtRegisteredClaimNames.Iss, issuer),
                 new Claim(JwtRegisteredClaimNames.Aud, audience),
-                //new Claim(ClaimTypes.Name, "John") and other user data
+                new Claim(ClaimTypes.Name, user.Login)
             };
 
             var token = new JwtSecurityToken(
                 claims: claims,
-                issuer: issuer,
-                audience: audience,
                 expires: DateTime.Now.AddDays(1),
                 signingCredentials: credentials);
 
